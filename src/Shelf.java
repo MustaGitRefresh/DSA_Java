@@ -1,32 +1,31 @@
-import jdk.jshell.JShell;
 
 public class Shelf {
     double[] ele;
-    int lim, rear,front;
+    int lim, rear, front;
 
-    Shelf(int n){
+    Shelf(int n) {
         lim = n;
         rear = -1;
         front = -1;
         ele = new double[lim];
     }
-    void push(double data){
-        if(rear == lim-1){
+
+    void push(double data) {
+        if (rear == lim - 1) {
             System.out.println("The shelf is full");
             return;
-        }
-        else if(rear == -1 && front == -1){
+        } else if (rear == -1 && front == -1) {
             front++;
             rear++;
             ele[rear] = data;
-        }
-        else{
+        } else {
             rear++;
             ele[rear] = data;
         }
     }
-    double pop(){
-        if(rear == -1){
+
+    double pop() {
+        if (rear == -1) {
             System.out.println("The shelf is empty");
             return 999.99;
         }
@@ -34,8 +33,9 @@ public class Shelf {
         front++;
         return val;
     }
-    void display(){
-        for(int i=0;i<=rear;i++){
+
+    void display() {
+        for (int i = 0; i <= rear; i++) {
             System.out.println(ele[i]);
         }
     }
